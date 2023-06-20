@@ -17,7 +17,7 @@ class _TempPageState extends State<TempPage> {
         mainAxisAlignment: MainAxisAlignment.center,
         children: [
           Icon(
-            Icons.account_circle_outlined,
+            Icons.sms,
             size: 130,
           ),
           Expanded(
@@ -351,7 +351,7 @@ class _TempPageState extends State<TempPage> {
       actions: [
         const Icon(
           Icons.search,
-          color: Colors.black87,
+          color: Colors.red,
           size: 35,
         ),
         Row(

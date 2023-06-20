@@ -9,14 +9,58 @@ class TempPage extends StatefulWidget {
 
 class _TempPageState extends State<TempPage> {
   int bottomNavIndex = 2;
+  int leftdice = 1;
 
   final contents = [
-    () => Container(
-          color: Colors.green,
+    () => ListView(padding: EdgeInsets.symmetric(horizontal: 20), children: [
+      Row(
+        mainAxisAlignment: MainAxisAlignment.center,
+        children: [
+          Icon(
+            Icons.account_circle_outlined,
+            size: 130,
+          ),
+          Expanded(
+            child: Column(
+              mainAxisAlignment: MainAxisAlignment.center,
+              children: [
+                Align(
+                  alignment: Alignment.center,
+                  child: Text(
+                    "현재 발신받은 메세지입니다",
+                    style: TextStyle(
+                      fontSize: 30,
+                    ),
+                  ),
+                ),
+              ],
+            ),
+          ),
+        ],
+      )
+
+        ]),
+        () => ListView(
+      padding: EdgeInsets.symmetric(horizontal: 20),
+      children: [
+        Column(
+          mainAxisAlignment: MainAxisAlignment.center,
+          children: [
+            const SizedBox(height: 400), // 버튼 위에 여백 추가
+            Center(
+              child: IconButton(
+                icon: Icon(Icons.circle),
+                iconSize: 100,
+                onPressed: () {
+                  // TODO: Add your desired functionality here
+                },
+              ),
+            ),
+          ],
         ),
-    () => Container(
-          color: Colors.red,
-        ),
+      ],
+    ),
+
     () => ListView(
           padding: EdgeInsets.symmetric(horizontal: 20),
           children: [
@@ -57,8 +101,7 @@ class _TempPageState extends State<TempPage> {
                   border: Border.all(
                 color: Color.fromRGBO(255, 228, 0, 0.7),
                 width: 5,
-              )
-              ),
+              )),
               child: Padding(
                 padding: const EdgeInsets.symmetric(
                   vertical: 20,
@@ -108,7 +151,7 @@ class _TempPageState extends State<TempPage> {
                               ),
                             ),
                             Row(
-                              children: const [
+                              children: [
                                 Text(
                                   "알람 ",
                                   style: TextStyle(
@@ -241,9 +284,6 @@ class _TempPageState extends State<TempPage> {
             ),
           ],
         ),
-    () => Container(
-          color: Colors.grey,
-        ),
   ];
 
   @override
@@ -278,14 +318,7 @@ class _TempPageState extends State<TempPage> {
               Icons.person,
               size: 40,
             ),
-            label: "내 정보",
-          ),
-          BottomNavigationBarItem(
-            icon: Icon(
-              Icons.home_outlined,
-              size: 40,
-            ),
-            label: "과정검색",
+            label: "관리",
           ),
         ],
       ),
